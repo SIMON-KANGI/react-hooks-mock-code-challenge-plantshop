@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList() {
+function PlantList({SearchPlant}) {
+  
   return (
-    <ul className="cards">{/* render PlantCards components in here */}</ul>
+    <ul className="cards">
+    {
+      SearchPlant.map(card=>{
+        return(
+          <PlantCard
+          image={card.image}
+          price={card.price}
+          name={card.name}
+
+          />
+        )
+      })
+    }
+    
+    </ul>
   );
 }
 
